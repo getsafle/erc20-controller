@@ -1,6 +1,6 @@
 {
   "name": "@getsafle/token-controller",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://sshubhamagg@bitbucket.org/getsafle/token-controller.git"
+    "url": "https://github.com/getsafle/erc20-controller"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/getsafle/token-controller#readme",
+  "homepage": "https://github.com/getsafle/erc20-controller#readme",
   "dependencies": {
     "axios": "^0.21.1"
   }
