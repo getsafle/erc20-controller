@@ -1,8 +1,8 @@
 const HELPER = require('./utils/helper');
 
 class Erc20Controller {
-    async getTokenDetails(contractAddress) {
-        const url = await HELPER.getUserTokenDataApi({ contractAddress });
+    async getTokenDetails({ chain,contractAddress }) {
+        const url = await HELPER.getUserTokenDataApi({ chain, contractAddress });
         const { response, error } = await HELPER.getRequest({ url });
         if (error) {
             return { error };
