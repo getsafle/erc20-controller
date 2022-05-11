@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { COINGEKO_BASE_URL } = require('../config');
+const { COINGECKO_BASE_URL } = require('../config');
 
 
 async function getRequest({ url }) {
@@ -15,11 +15,31 @@ async function getRequest({ url }) {
   }
 }
 
-async function getUserTokenDataApi({ contractAddress }){
-    return `${COINGEKO_BASE_URL}/coins/ethereum/contract/${contractAddress}`;
+async function getUserTokenDataApi({chain, contractAddress}){
+  switch (chain) {
+    case 'ethereum': {
+       let url =  `${COINGECKO_BASE_URL}/coins/ethereum/contract/${contractAddress}`;
+
+        return url;
+    }
+    case 'polygon':{
+      let url =  `${COINGECKO_BASE_URL}/coins/polygon-pos/contract/${contractAddress}`;
+
+      return url;
+    }
+    case 'bsc':{
+      let url =  `${COINGECKO_BASE_URL}/coins/binance-smart-chain/contract/${contractAddress}`;
+
+      return url;
+    }
+    default: {
+        return { error: INVALID_CHAIN_SELECTED };
+    }
+}
 }
 
+
 module.exports = {
-    getRequest, getUserTokenDataApi,
+    getRequest, getUserTokenDataApi
 };
 
