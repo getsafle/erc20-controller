@@ -15,3 +15,7 @@
 ### 1.0.3 (2021-05-09)
 
 * Documentation Added
+
+### 1.0.4 (2021-09-12)
+
+* Updated the README file with the latest functional & non-functional documentation.
