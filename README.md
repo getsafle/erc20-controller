@@ -1,34 +1,44 @@
-# **Safle Token Controller**
+# Safle Token Controller
 
 Safle Token Controller SDK
 
+## Installation
 
-## **Installation and Usage**
+To install this SDK,
 
-> Installation
+```js
+npm install --save @getsafle/token-controller
+```
 
-Install the package by running the command,
+## Initialization
 
-`npm install @getsafle/token-controller`
+Initialize the constructor,
 
-Import the package into your project using,
+```js
+const safleTokenController = require('@getsafle/token-controller');
 
-`const safleTokenController = require('@getsafle/token-controller');`
+const tokenController = new safleTokenController.Erc20Controller();
+```
 
-## **Token Controller**
+<br>
 
-> Initialising
+> Get Token Details
 
-Initialise the class using,
+<br>
 
-`const tokenController = new safleTokenController.Erc20Controller();` 
+This function returns the complete details about a particular token that coingecko provides
 
+```js
+const tokenDetails = await tokenController.getTokenDetails({ chain, contractAddress });
+```
 
-> Methods
-
-Get Token Details
-
-`const tokenDetails = await tokenController.getTokenDetails(contractAddress);`
-
+* `chain` - The chain where the token is deployed to
 * `contractAddress` - Token Contract Address
 
+<br>
+
+> Supported chains
+
+* `ethereum`
+* `polygon`
+* `bsc`
